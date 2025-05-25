@@ -17,7 +17,7 @@ class Lfm
     protected $config;
     protected $request;
 
-    public function __construct(Config $config = null, Request $request = null)
+    public function __construct(?Config $config = null, ?Request $request = null)
     {
         $this->config = $config;
         $this->request = $request;
@@ -129,7 +129,7 @@ class Lfm
         return empty(auth()->user()) ? '' : auth()->user()->$config;
     }
 
-    public function getRootFolder($type = null)
+    public function getRootFolder(?string $type = null)
     {
         if (is_null($type)) {
             $type = 'share';

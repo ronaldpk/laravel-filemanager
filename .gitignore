@@ -6,4 +6,8 @@ composer.lock
 /.idea
 .buildpath
 .project
+<<<<<<< Upstream, based on branch 'master' of https://github.com/ronaldpk/laravel-filemanager
 /.settings
+=======
+/.settings
+>>>>>>> 3000e94 prepared for deprecation op implicit nullables in php 8.4
