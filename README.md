@@ -1,3 +1,6 @@
+This fork adds a method `origImageSizes()` which returns the dimensions and filesizes (raw and human) of the original image.
+<hr>
+
 <p align="center"><img src="https://unisharp.github.io/laravel-filemanager/images/logo_vertical_colored.png"></p>
 
 <p align="center">
