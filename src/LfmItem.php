@@ -107,7 +107,28 @@ class LfmItem
     {
         return $this->isFile() ? $this->humanFilesize($this->lfm->size()) : '';
     }
-
+    
+    public function origImageSizes()
+    {
+        if (!$this->isImage()) {
+            return null;
+        }
+        $origPath = Str::replaceLast(
+            $this->helper->getThumbFolderName() . Lfm::DS,
+            '',
+            str_replace('\\', Lfm::DS, $this->path())
+            );
+        
+        $arr = getimagesize($origPath);
+        $filesize = filesize($origPath);
+        return [
+            'w' => $arr[0],
+            'h' => $arr[1],
+            'size' => $filesize,
+            'humanSize' => $this->humanFilesize($filesize)
+        ];
+    }
+    
     public function time()
     {
         // Avoid requesting lastModified for directories on S3-like drivers
